@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const congratsModal = document.getElementById('congrats-modal');
         const closeBtn = document.querySelector('.congrats-close-btn');
     
-        congratsModal.style.display = 'block';
+        congratsModal.style.display = 'flex';
     
         closeBtn.onclick = function() {
             congratsModal.style.display = 'none';
