@@ -98,7 +98,7 @@ button {
     outline: none;
     margin: 0 10px;
     text-transform: uppercase;
-    box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff; /* Outer glow */
+    box-shadow: 0 0 15px #0ff; /* Outer glow */
     transition: all 0.3s ease;
 }
 
