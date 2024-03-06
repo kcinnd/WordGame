@@ -215,7 +215,7 @@ button:hover {
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
-    color: #fff; /* White text */
+    color: #ffff00; 
     font-size: 16px;
     cursor: pointer;
     box-shadow: 0 0 15px rgba(255, 255, 0, 0.7); /* Soft yellow glow */
@@ -234,7 +234,7 @@ button:hover {
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
-    color: #fff; /* White text */
+    color: #ff0000; /* White text */
     font-size: 16px;
     cursor: pointer;
     box-shadow: 0 0 15px rgba(255, 0, 0, 0.7); /* Soft red glow */
