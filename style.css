@@ -14,6 +14,7 @@ body {
     max-width: 500px;
     grid-template-rows: repeat(7, 1fr);
     gap: 30px; 
+    justify-content: center;
     padding: 20px;
     background: rgba(0, 0, 0, 0.8); /* Slightly transparent background */
     border-radius: 10px;
@@ -30,12 +31,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-width: 60px; /* Minimum square size */
+    min-height: 60px;
+    margin: 0 auto;
     font-size: 24px; /* Larger text */
     color: #0ff; /* Neon text color */
     background: #222; /* Darker square background */
     border: 2px solid rgba(0, 255, 255, 0.7);
     border-radius: 5px; /* Rounded corners */
-    box-shadow: inset 0 0 10px #0ff, 0 0 10px #0ff;
+    box-shadow: 
+        0 0 5px rgba(0, 255, 255, 0.7), /* Soft outer glow */
+        inset 0 0 5px rgba(0, 255, 255, 0.7);
     transition: all 0.3s ease; /* Smooth transition for effects */
 }
 
@@ -47,7 +53,7 @@ body {
 
 /* Style the alphabet container and letters for a more engaging look */
 .alphabet-container {
-    margin-top: 30px; /* Space from the game board */
+    margin-top: 20px; /* Space from the game board */
     padding: 20px;
     text-align: center;
     background: rgba(0, 0, 0, 0.8);
