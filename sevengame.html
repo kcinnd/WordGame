@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyberpunk Game Board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-area">
+        <div class="game-container">
+            <div class="row">
+                <div class="square square-1-1"></div>
+                <div class="square square-1-2"></div>
+                <div class="square square-1-3"></div>
+                <div class="square square-1-4"></div>
+                <div class="square square-1-5"></div>
+                <div class="square square-1-6"></div>
+                <div class="square square-1-7"></div>
+            </div>
+            <div class="row">
+                <div class="square square-2-1"></div>
+                <div class="square square-2-2"></div>
+                <div class="square square-2-3"></div>
+                <div class="square square-2-4"></div>
+                <div class="square square-2-5"></div>
+                <div class="square square-2-6"></div>
+                <div class="square square-2-7"></div>
+            </div>
+            <div class="row">
+                <div class="square square-3-1"></div>
+                <div class="square square-3-2"></div>
+                <div class="square square-3-3"></div>
+                <div class="square square-3-4"></div>
+                <div class="square square-3-5"></div>
+                <div class="square square-3-6"></div>
+                <div class="square square-3-7"></div>
+            </div>
+            <div class="row">
+                <div class="square square-4-1"></div>
+                <div class="square square-4-2"></div>
+                <div class="square square-4-3"></div>
+                <div class="square square-4-4"></div>
+                <div class="square square-4-5"></div>
+                <div class="square square-4-6"></div>
+                <div class="square square-4-7"></div>
+            </div>
+            <div class="row">
+                <div class="square square-5-1"></div>
+                <div class="square square-5-2"></div>
+                <div class="square square-5-3"></div>
+                <div class="square square-5-4"></div>
+                <div class="square square-5-5"></div>
+                <div class="square square-5-6"></div>
+                <div class="square square-5-7"></div>
+            </div>
+            <div class="row">
+                <div class="square square-6-1"></div>
+                <div class="square square-6-2"></div>
+                <div class="square square-6-3"></div>
+                <div class="square square-6-4"></div>
+                <div class="square square-6-5"></div>
+                <div class="square square-6-6"></div>
+                <div class="square square-6-7"></div>
+            </div>
+        </div>
+        <div class="controls-container">
+            <div class="alphabet-container">
+                <div class="alphabet-row">
+                    <span class="letter">A</span>
+                    <span class="letter">B</span>
+                    <span class="letter">C</span>
+                    <span class="letter">D</span>
+                    <span class="letter">E</span>
+                    <span class="letter">F</span>
+                </div>
+                <div class="alphabet-row">
+                    <span class="letter">G</span>
+                    <span class="letter">H</span>
+                    <span class="letter">I</span>
+                    <span class="letter">J</span>
+                    <span class="letter">K</span>
+                    <span class="letter">L</span>
+                </div>
+                <div class="alphabet-row">
+                    <span class="letter">M</span>
+                    <span class="letter">N</span>
+                    <span class="letter">O</span>
+                    <span class="letter">P</span>
+                    <span class="letter">Q</span>
+                    <span class="letter">R</span>
+                </div>
+                <div class="alphabet-row">
+                    <span class="letter">S</span>
+                    <span class="letter">T</span>
+                    <span class="letter">U</span>
+                    <span class="letter">V</span>
+                    <span class="letter">W</span>
+                    <span class="letter">X</span>
+                </div>
+                <div class="alphabet-row">
+                    <span class="letter">Y</span>
+                    <span class="letter">Z</span>
+                </div>
+            </div>
+        </div>       
+        <div id="instructionsModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Game Instructions</h2>
+                <p>Welcome to CyberWord! Your mission is to uncover the hidden 7-letter word within 6 attempts. Each guess must be a valid 7-letter word. Press the letters below to form your guess. After each guess, the tiles will change to show how close your guess was to the word. A blue glow indicates a correct letter in the incorrect position, while a green glow indicates a correct letter in the correct position. If you do not find your word by the end of the sixth round, the game starts over with a new word. Good luck, and have fun!</p>
+            </div>
+        </div>
+        
+        <div class="buttons-container">
+            <button id="readInstructionsBtn">Read Instructions</button>
+            <button id="undoButton">Undo</button>
+            <button id="clearButton">Reset</button>
+        </div>
+    </div>
+    <div id="congrats-modal" class="congrats-modal">
+        <div class="congrats-modal-content">
+            <span class="congrats-close-btn">&times;</span>
+            <h2>Congratulations!</h2>
+            <p>You guessed the word!</p>
+            <button id="continueBtn">Continue</button>
+        </div>
+    </div>
+<script src="sixscript.js"></script>
+</body>
+</html>
