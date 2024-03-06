@@ -7,17 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Read Instructions Button -->
-    <button id="readInstructionsBtn">Read Instructions</button>
-    
-    <!-- Instructions Modal -->
-    <div id="instructionsModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h2>Game Instructions</h2>
-            <p>Welcome to CyberWord! Your mission, should you choose to accept it, is to uncover the hidden 5-letter word within 7 attempts. Each guess must be a valid 5-letter word. Press the letters below to form your guess, and hit enter to submit. After each guess, the tiles will change to show how close your guess was to the word. May the cyber gods be in your favor!</p>
-        </div>
-    </div>
+   
     <div class="game-container">
         <!-- Row 1 -->
         <div class="row">
@@ -76,10 +66,7 @@
             <div class="square square-7-5"></div>
         </div>
     </div>
-    <div class="buttons-container">
-        <button id="undoButton">Undo</button>
-        <button id="clearButton">Clear</button>
-    </div>
+
     <div class="alphabet-container">
         <div class="alphabet-row">
             <span class="letter">A</span>
@@ -111,6 +98,22 @@
             <span class="letter">Y</span>
             <span class="letter">Z</span>
         </div>
+    </div>
+    <!-- Read Instructions Button -->
+    <button id="readInstructionsBtn">Read Instructions</button>
+    
+    <!-- Instructions Modal -->
+    <div id="instructionsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Game Instructions</h2>
+            <p>Welcome to CyberWord! Your mission, should you choose to accept it, is to uncover the hidden 5-letter word within 7 attempts. Each guess must be a valid 5-letter word. Press the letters below to form your guess, and hit enter to submit. After each guess, the tiles will change to show how close your guess was to the word. May the cyber gods be in your favor!</p>
+        </div>
+    </div>
+    
+    <div class="buttons-container">
+        <button id="undoButton">Undo</button>
+        <button id="clearButton">Clear</button>
     </div>
 <script src="game.js"></script>
 </body>
