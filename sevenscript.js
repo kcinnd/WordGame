@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     
     const celebrateWin = () => {
-        const congratsModal = document.getElementById('congrats-modal');
+        const congratsModal = document.getElementById('final-congrats-modal');        
         const closeBtn = document.querySelector('.congrats-close-btn');
     
         congratsModal.style.display = 'block';
