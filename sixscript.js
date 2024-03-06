@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     closeBtn.onclick = function() {
-        instructionsModal.style.display = 'none'; // Hide the modal
+        instructionsModal.style.display = 'none'; 
     };
 
     window.onclick = function(event) {
