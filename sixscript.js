@@ -88,10 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    document.getElementById('continueBtn').addEventListener('click', function() {
-        window.location.href = 'sixgame.html'; // Relative path, assuming it's in the same directory
+    document.getElementById('continueFinalBtn').addEventListener('click', function() {
+        window.location.href = 'sevengame.html'; // Redirect to the seven-letter game page
     });
-
+    
     const resetGame = () => {
         document.querySelectorAll('.square').forEach(square => {
             square.textContent = '';
