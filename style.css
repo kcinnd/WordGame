@@ -28,3 +28,32 @@ body {
     box-shadow: 0 0 15px rgba(0, 255, 255, 0.6), inset 0 0 10px rgba(0, 0, 0, 0.5); /* Neon glow effect with inner shadow for depth */
     border-radius: 5px; /* Slightly rounded corners for a modern look */
 }
+
+.alphabet-container {
+    margin-top: 30px; /* Space from the game board */
+    text-align: center;
+}
+
+.alphabet-row {
+    margin-bottom: 10px; /* Space between rows */
+}
+
+.letter {
+    display: inline-block;
+    margin: 0 8px; /* Spacing between letters */
+    font-size: 24px; /* Adjust size as needed */
+    color: #0ff; /* Initial color */
+    text-transform: uppercase; /* Make all letters uppercase */
+    transition: color 0.3s, text-shadow 0.3s; /* Smooth transition for hover effects */
+    cursor: pointer; /* Indicates interactivity */
+}
+
+.letter:hover {
+    color: #ff0; /* Change color on hover */
+    text-shadow: 
+        0 0 10px #ff0,
+        0 0 20px #ff0, 
+        0 0 40px #ff0, 
+        0 0 80px #ff0, 
+        0 0 160px #ff0; /* Glowing effect on hover */
+}
