@@ -204,7 +204,8 @@ button:hover {
 
 .square.incorrect-letter {
     box-shadow: 0 0 15px rgba(255, 105, 180, 0.7), /* Soft pink glow */
-                 0 0 30px rgba(255, 105, 180, 0.7); /* Intense pink glow */
+                 0 0 30px rgba(255, 105, 180, 0.7);
+    color: #035ba8;
 }
 
 /* Glow effect for the Undo button */
