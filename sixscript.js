@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const words = ['global', 'domain', 'county', 'legend', 'leader', 'oceans', 'plants', 'animal', 'flower', 'forest'];
+    const words = ['global', 'domain', 'county', 'legend', 'leader', 'oceans', 'plants', 'animal', 'flower', 'forest', 'castle', 'planet', 'island', 'travel', 'nature', 'market', 'jungle', 'canyon', 'glacier', 'region'];
     let chosenWord = words[Math.floor(Math.random() * words.length)];
     let currentGuess = [];
     let round = 1;
