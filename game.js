@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const instructionsBtn = document.getElementById('readInstructionsBtn');
     const instructionsModal = document.getElementById('instructionsModal');
     const closeBtn = document.querySelector('.close-btn');
+    let usedLettersInRound = new Set();
 
     instructionsBtn.onclick = function() {
         instructionsModal.style.display = 'block'; // Show the modal
@@ -26,7 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const resetLetters = () => {
-        letters.forEach(letter => letter.style.visibility = 'visible');
+        letters.forEach(letter => {
+            letter.style.visibility = 'visible'; // Make all letters visible again
+            usedLettersInRound.clear(); // Reset used letters for the new round
+        });
     };
 
     const checkGuess = () => {
@@ -36,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Move to the next round or end the game after a complete guess
+        // Move to the next round or end the game
         if (round === 7) {
             alert('Game over! The word was: ' + chosenWord);
             resetGame();
@@ -45,8 +49,9 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Try again! Round: ' + round);
         }
         currentGuess = []; // Prepare for the next guess
+        resetLetters(); // Make all letters available again for the new round
     };
-
+    
     const celebrateWin = () => {
         alert('Congratulations! You guessed the word!');
         resetGame();
@@ -61,28 +66,32 @@ document.addEventListener('DOMContentLoaded', () => {
         history = [];
         nextSquare = 1;
         round = 1;
+        currentGuess = [];
         chosenWord = words[Math.floor(Math.random() * words.length)];
     };
 
     letters.forEach(letter => {
         letter.addEventListener('click', function() {
-            const targetRow = Math.ceil(nextSquare / 5);
-            const targetCol = nextSquare % 5 === 0 ? 5 : nextSquare % 5;
-            const targetSquare = document.querySelector(`.square-${targetRow}-${targetCol}`);
+            if (!usedLettersInRound.has(this.textContent.toLowerCase())) { // Check if the letter hasn't been used in this round
+                const targetRow = Math.ceil(nextSquare / 5);
+                const targetCol = nextSquare % 5 === 0 ? 5 : nextSquare % 5;
+                const targetSquare = document.querySelector(`.square-${targetRow}-${targetCol}`);
 
-            if (!targetSquare.classList.contains('filled')) {
-                targetSquare.textContent = this.textContent;
-                targetSquare.classList.add('filled', 'glow-intense');
-                history.push({ square: targetSquare, letter: this });
-                this.style.visibility = 'hidden';
-                currentGuess.push(this.textContent.toLowerCase());
+                if (!targetSquare.classList.contains('filled')) {
+                    targetSquare.textContent = this.textContent;
+                    targetSquare.classList.add('filled', 'glow-intense');
+                    history.push({ square: targetSquare, letter: this });
+                    this.style.visibility = 'hidden'; // Hide the letter for the current round
+                    usedLettersInRound.add(this.textContent.toLowerCase()); // Mark the letter as used in this round
+                    currentGuess.push(this.textContent.toLowerCase());
 
-                // Check the guess after filling the last square of the row
-                if (targetCol === 5) {
-                    checkGuess();
+                    // Check the guess after filling the last square of the row
+                    if (targetCol === 5) {
+                        checkGuess();
+                    }
+
+                    nextSquare++;
                 }
-
-                nextSquare++;
             }
         });
     });
