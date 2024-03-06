@@ -70,10 +70,27 @@ document.addEventListener('DOMContentLoaded', () => {
         currentGuess = []; // Prepare for the next guess
         resetLetters(); // Make all letters available again for the new round
     };
+    
     const celebrateWin = () => {
-        alert('Congratulations! You guessed the word!');
-        resetGame();
+        const congratsModal = document.getElementById('congrats-modal');
+        const closeBtn = document.querySelector('.congrats-close-btn');
+    
+        congratsModal.style.display = 'block';
+    
+        closeBtn.onclick = function() {
+            congratsModal.style.display = 'none';
+        }
+    
+        window.onclick = function(event) {
+            if (event.target == congratsModal) {
+                congratsModal.style.display = 'none';
+            }
+        }
     };
+
+    document.getElementById('continueBtn').addEventListener('click', function() {
+        window.location.href = 'sixgame.html'; // Relative path, assuming it's in the same directory
+    });
 
     const resetGame = () => {
         document.querySelectorAll('.square').forEach(square => {
