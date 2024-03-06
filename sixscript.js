@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.onclick = function(event) {
         if (event.target == instructionsModal) {
-            instructionsModal.style.display = 'none'; // Hide the modal when clicking outside of it
+            instructionsModal.style.display = 'none'; 
         }
     };
 
