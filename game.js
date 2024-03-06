@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const resetLetters = () => {
         letters.forEach(letter => {
-            letter.style.visibility = 'visible'; // Make all letters visible again for the new round
+            letter.style.visibility = 'visible'; 
             usedLettersInRound.clear(); // Reset used letters for the new round
         });
     };
