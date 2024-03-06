@@ -10,6 +10,8 @@ body {
 
 .game-container {
     display: grid;
+    margin: 0 auto 50px; /* Center the game container and add margin at the bottom */
+    max-width: 500px;
     grid-template-rows: repeat(7, 1fr);
     gap: 30px; 
     padding: 20px;
@@ -33,12 +35,17 @@ body {
     background: #222; /* Darker square background */
     border: 1px solid #333; /* Subtle border */
     border-radius: 5px; /* Rounded corners */
+    box-shadow: inset 0 0 10px #0ff, 0 0 10px #0ff;
     transition: all 0.3s ease; /* Smooth transition for effects */
+}
+
+.square.filled {
+    box-shadow: inset 0 0 15px #0ff, 0 0 20px #0ff; /* More intense glow */
 }
 
 /* Style the alphabet container and letters for a more engaging look */
 .alphabet-container {
-    margin-top: 50px; /* Space from the game board */
+    margin-top: 30px; /* Space from the game board */
     padding: 20px;
     text-align: center;
     background: rgba(0, 0, 0, 0.8);
