@@ -10,7 +10,7 @@ body {
 
 .game-container {
     display: grid;
-    margin: 0 auto 50px; /* Center the game container and add margin at the bottom */
+    margin: 0 auto 50px; 
     max-width: 500px;
     grid-template-rows: repeat(7, 1fr);
     gap: 30px; 
