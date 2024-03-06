@@ -301,3 +301,19 @@ button:hover {
     text-decoration: none;
     cursor: pointer;
 }
+
+/* Optional: Specific styles for the final challenge button */
+#continueFinalBtn {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px; /* Spacing between the two buttons */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#continueFinalBtn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
