@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     currentGuess.push(this.textContent.toLowerCase());
 
                     if (currentGuess.length === 5) {
-                        checkGuess(); // Only check the guess when the row is complete
+                        checkGuess(); 
                     }
 
                     nextSquare++;
