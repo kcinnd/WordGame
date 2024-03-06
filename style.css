@@ -317,3 +317,34 @@ button:hover {
 #continueFinalBtn:hover {
     background-color: #45a049; /* Darker green on hover */
 }
+
+.final-congrats-modal {
+    /* Similar base styles as previous modals, add a dark background for contrast */
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.final-congrats-modal-content {
+    /* Add intense glow to the modal */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 50px rgba(255, 255, 255, 0.6), 0 0 100px rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    background: #000; /* Dark background for modal content */
+}
+
+.glowing-text {
+    /* Glowing text effect */
+    color: #fff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0, 0 0 40px #ff0, 0 0 80px #ff0, 0 0 120px #ff0;
+    font-size: 24px;
+}
+
+.final-congrats-close-btn {
+    /* Close button styles */
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    color: #fff;
+}
