@@ -1,3 +1,8 @@
+const words = ['globe', 'human', 'earth', 'world', 'urban', 'plant', 'flora', 'fauna', 'ocean']; // Example list of words
+let chosenWord = words[Math.floor(Math.random() * words.length)]; // Randomly chosen word
+let currentGuess = []; // Stores the current guess
+let round = 1; // Current round
+
 document.addEventListener('DOMContentLoaded', () => {
     const letters = document.querySelectorAll('.letter');
     let nextSquare = 1;
@@ -5,6 +10,67 @@ document.addEventListener('DOMContentLoaded', () => {
     let lockedRows = new Set(); // Track locked rows
     const totalSquares = 35; // 7 rows * 5 columns
     const squaresPerRow = 5;
+
+    // Modal functionality
+    const modal = document.getElementById('instructionsModal');
+    const closeButton = document.querySelector('.close');
+    
+    closeButton.onclick = function() {
+        modal.style.display = 'none';
+    };
+    
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    };
+
+    const checkGuess = () => {
+        const guessWord = currentGuess.join('');
+        if (guessWord === chosenWord) {
+            celebrateWin();
+            return;
+        }
+
+        if (currentGuess.length === 5) { // Guess is complete
+            if (round === 7) {
+                alert('Game over! The word was: ' + chosenWord);
+                resetGame();
+            } else {
+                round++;
+                currentGuess = []; // Reset current guess for the next round
+                alert('Try again! Round: ' + round);
+            }
+        }
+    };
+
+    const celebrateWin = () => {
+        // Implement celebration animations and effects here
+        alert('Congratulations! You guessed the word!');
+        resetGame();
+    };
+
+    const resetGame = () => {
+        document.querySelectorAll('.square').forEach(square => {
+            square.textContent = '';
+            square.classList.remove('filled', 'glow-intense');
+        });
+        currentGuess = [];
+        nextSquare = 1;
+        round = 1;
+        chosenWord = words[Math.floor(Math.random() * words.length)]; // Choose a new word
+        resetLetters();
+    };
+
+    // Update letter click event to push letters to currentGuess and call checkGuess()
+    letters.forEach(letter => {
+        letter.addEventListener('click', function() {
+            if (currentGuess.length < 5) {
+                currentGuess.push(this.textContent.toLowerCase());
+                checkGuess();
+            }
+        });
+    });
 
     const resetLetters = () => {
         letters.forEach(letter => letter.style.visibility = 'visible');
