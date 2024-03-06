@@ -34,24 +34,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const checkGuess = () => {
         const guessWord = currentGuess.join('');
-
+        const chosenWordArray = chosenWord.split('');
+    
         // Feedback for each letter in the guess
         currentGuess.forEach((letter, index) => {
             const targetSquare = document.querySelector(`.square-${round}-${index + 1}`);
+            
             if (chosenWord[index] === letter) {
                 // Correct letter in the correct position
                 targetSquare.classList.add('correct-position');
+                targetSquare.classList.remove('incorrect-letter'); // Ensure the incorrect class is removed
             } else if (chosenWord.includes(letter)) {
                 // Correct letter but in the wrong position
                 targetSquare.classList.add('correct-letter');
+                targetSquare.classList.remove('incorrect-letter'); // Ensure the incorrect class is removed
+            } else {
+                // Incorrect letter
+                targetSquare.classList.add('incorrect-letter');
             }
         });
-
+    
         if (guessWord === chosenWord) {
             celebrateWin();
             return;
         }
-
+    
         if (round === 7) {
             alert('Game over! The word was: ' + chosenWord);
             resetGame();
@@ -59,11 +66,10 @@ document.addEventListener('DOMContentLoaded', () => {
             round++;
             alert('Try again! Round: ' + round);
         }
-
+    
         currentGuess = []; // Prepare for the next guess
         resetLetters(); // Make all letters available again for the new round
     };
-
     const celebrateWin = () => {
         alert('Congratulations! You guessed the word!');
         resetGame();
