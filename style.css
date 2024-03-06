@@ -33,14 +33,16 @@ body {
     font-size: 24px; /* Larger text */
     color: #0ff; /* Neon text color */
     background: #222; /* Darker square background */
-    border: 1px solid #333; /* Subtle border */
+    border: 2px solid rgba(0, 255, 255, 0.7);
     border-radius: 5px; /* Rounded corners */
     box-shadow: inset 0 0 10px #0ff, 0 0 10px #0ff;
     transition: all 0.3s ease; /* Smooth transition for effects */
 }
 
 .square.filled {
-    box-shadow: inset 0 0 15px #0ff, 0 0 20px #0ff; /* More intense glow */
+    box-shadow: inset 0 0 15px #0ff, 0 0 10px rgba(0, 255, 255, 0.8), 
+        0 0 15px rgba(0, 255, 255, 0.8), 
+        0 0 20px rgba(0, 255, 255, 0.8); /* More intense glow */
 }
 
 /* Style the alphabet container and letters for a more engaging look */
