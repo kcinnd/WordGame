@@ -321,6 +321,7 @@ button:hover {
 .final-congrats-modal {
     /* Similar base styles as previous modals, add a dark background for contrast */
     background-color: rgba(0, 0, 0, 0.9);
+    display: none;
 }
 
 .final-congrats-modal-content {
