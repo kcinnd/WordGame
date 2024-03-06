@@ -264,18 +264,31 @@ button:hover {
 
 .congrats-modal-content {
     position: relative;
-    background-color: #fefefe;
-    margin: 10% auto;
+    background-color: #1a1a1d; /* Dark background for the content */
+    background-image: linear-gradient(315deg, #1a1a1d 0%, #4e4e50 74%); /* Subtle gradient */
+    margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    animation-name: animatetop;
-    animation-duration: 0.4s;
+    border-radius: 10px; /* Rounded corners */
+    width: 70%; /* Width */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Shadow for depth */
+    border: 1px solid rgba(255, 255, 255, 0.18); /* Slight border */
+    animation: modalFadeIn 0.5s; /* Fade-in animation */
+}
+
+/* Fade-in animation */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .congrats-close-btn {
-    color: #aaa;
+    color: #ccc;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -283,7 +296,7 @@ button:hover {
 
 .congrats-close-btn:hover,
 .congrats-close-btn:focus {
-    color: black;
+    color: #ff0000;
     text-decoration: none;
     cursor: pointer;
 }
