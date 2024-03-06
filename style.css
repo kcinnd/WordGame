@@ -206,7 +206,7 @@ button:hover {
     color: #1f51ff; /* Neon blue text */
     font-size: 16px;
     cursor: pointer;
-    box-shadow: 0 0 15px #1f51ff; /* Neon glow */
+    box-shadow: 0 0 15px rgba(31, 81, 255, 0.5); /* Neon glow */
     transition: transform 0.2s ease-in-out;
 }
 
@@ -224,7 +224,7 @@ button:hover {
     color: #ffff33; 
     font-size: 16px;
     cursor: pointer;
-    box-shadow: 0 0 15px rgba(255, 255, 51, 0.7); /* Soft yellow glow */
+    box-shadow: 0 0 15px rgba(255, 255, 51, 0.5); /* Soft yellow glow */
     transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
@@ -242,7 +242,7 @@ button:hover {
     color: #ff3131; /* White text */
     font-size: 16px;
     cursor: pointer;
-    box-shadow: 0 0 15px rgba(255, 49, 49, 0.7); /* Soft red glow */
+    box-shadow: 0 0 15px rgba(255, 49, 49, 0.5); /* Soft red glow */
     transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
@@ -326,7 +326,7 @@ button:hover {
 
 .final-congrats-modal-content {
     /* Add intense glow to the modal */
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 50px rgba(255, 255, 255, 0.6), 0 0 100px rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 20px rgba(255, 223, 255, 0.8), 0 0 50px rgba(255, 223, 255, 0.6), 0 0 100px rgba(255, 223, 255, 0.4);
     border-radius: 10px;
     padding: 40px;
     text-align: center;
