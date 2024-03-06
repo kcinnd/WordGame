@@ -7,6 +7,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const letters = document.querySelectorAll('.letter');
     let nextSquare = 1;
     let history = [];
+    const instructionsBtn = document.getElementById('readInstructionsBtn');
+    const instructionsModal = document.getElementById('instructionsModal');
+    const closeBtn = document.querySelector('.close-btn');
+
+    instructionsBtn.onclick = function() {
+        instructionsModal.style.display = 'block'; // Show the modal
+    }
+
+    closeBtn.onclick = function() {
+        instructionsModal.style.display = 'none'; // Hide the modal
+    }
+
+    window.onclick = function(event) {
+        if (event.target == instructionsModal) {
+            instructionsModal.style.display = 'none'; // Hide the modal when clicking outside of it
+        }
+    }
 
     const resetLetters = () => {
         letters.forEach(letter => letter.style.visibility = 'visible');
