@@ -10,6 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const instructionsModal = document.getElementById('instructionsModal');
     const closeBtn = document.querySelector('.close-btn');
     let usedLettersInRound = new Set();
+    const showFinalCongratsModal = () => {
+        const modal = document.getElementById('final-congrats-modal');
+        modal.style.display = 'block';
+    };
+
+    document.querySelector('.final-congrats-close-btn').addEventListener('click', () => {
+        document.getElementById('final-congrats-modal').style.display = 'none';
+    });
 
     instructionsBtn.onclick = function() {
         instructionsModal.style.display = 'block'; 
