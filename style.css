@@ -101,6 +101,7 @@ body {
 button {
     background-color: #222;
     border: 2px solid #0ff;
+    font-family: 'Conthrax', Arial, sans-serif;
     border-radius: 5px;
     color: #0ff;
     font-size: 18px;
