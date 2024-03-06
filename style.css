@@ -179,17 +179,20 @@ button:hover {
 }
 
 .square.correct-position {
-    box-shadow: 0 0 15px #0f0, 0 0 30px #0f0; /* Neon green glow for correct position */
+    box-shadow: 0 0 15px #0f0, 0 0 30px #0f0; 
+    border: 2px solid #0f0;
 }
 
 .square.correct-letter {
-    box-shadow: 0 0 15px #00f, 0 0 30px #00f; /* Neon blue glow for correct letter, wrong position */
+    box-shadow: 0 0 15px #00f, 0 0 30px #00f;
+    border: 2px solid #00f;
 }
 
 .square.incorrect-letter {
     box-shadow: 0 0 15px rgba(255, 105, 180, 0.7), /* Soft pink glow */
                  0 0 30px rgba(255, 105, 180, 0.7);
     color: #028181;
+    border: 2px solid rgba(255, 105, 180, 0.7);
 }
 
 #readInstructionsBtn {
