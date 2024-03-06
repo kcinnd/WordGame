@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const letters = document.querySelectorAll('.letter');
-  let nextSquare = 1; // Start with the first square
+  let nextSquare = 1; 
 
   letters.forEach(letter => {
     letter.addEventListener('click', function() {
