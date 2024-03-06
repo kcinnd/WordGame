@@ -329,14 +329,29 @@ button:hover {
     /* Similar base styles as previous modals, add a dark background for contrast */
     background-color: rgba(0, 0, 0, 0.9);
     display: none;
+    position: fixed; /* Positioned relative to the viewport */
+    z-index: 1; /* Sit on top of other content */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
 }
 
 .final-congrats-modal-content {
     /* Add intense glow to the modal */
     box-shadow: 0 0 20px rgba(255, 223, 255, 0.8), 0 0 50px rgba(255, 223, 255, 0.6), 0 0 100px rgba(255, 223, 255, 0.4);
     border-radius: 10px;
+    margin: auto;
+    max-width: 90%;
     padding: 40px;
     text-align: center;
+    position: relative; /* For absolute positioning of the close button */
+    display: inline-flex; /* Use flex for internal content, keeping it inline for auto width */
+    flex-direction: column; /* Stack content vertically */
+    align-items: center;
     background: #000; /* Dark background for modal content */
 }
 
@@ -355,4 +370,12 @@ button:hover {
     right: 20px;
     font-size: 30px;
     color: #fff;
+    font-weight: bold;
+}
+
+.congrats-close-btn:hover,
+.congrats-close-btn:focus {
+    color: black; /* Change color on hover/focus for better visibility */
+    text-decoration: none;
+    cursor: pointer;
 }
