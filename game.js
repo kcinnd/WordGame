@@ -1,9 +1,8 @@
-const words = ['globe', 'human', 'earth', 'world', 'urban', 'plant', 'flora', 'fauna', 'ocean'];
-let chosenWord = words[Math.floor(Math.random() * words.length)];
-let currentGuess = [];
-let round = 1;
-
 document.addEventListener('DOMContentLoaded', () => {
+    const words = ['globe', 'human', 'earth', 'world', 'urban', 'plant', 'flora', 'fauna', 'ocean'];
+    let chosenWord = words[Math.floor(Math.random() * words.length)];
+    let currentGuess = [];
+    let round = 1;
     const letters = document.querySelectorAll('.letter');
     let nextSquare = 1;
     let history = [];
@@ -14,33 +13,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
     instructionsBtn.onclick = function() {
         instructionsModal.style.display = 'block'; // Show the modal
-    }
+    };
 
     closeBtn.onclick = function() {
         instructionsModal.style.display = 'none'; // Hide the modal
-    }
+    };
 
     window.onclick = function(event) {
         if (event.target == instructionsModal) {
             instructionsModal.style.display = 'none'; // Hide the modal when clicking outside of it
         }
-    }
+    };
 
     const resetLetters = () => {
         letters.forEach(letter => {
-            letter.style.visibility = 'visible'; // Make all letters visible again
+            letter.style.visibility = 'visible'; // Make all letters visible again for the new round
             usedLettersInRound.clear(); // Reset used letters for the new round
         });
     };
 
     const checkGuess = () => {
         const guessWord = currentGuess.join('');
+
+        // Feedback for each letter in the guess
+        currentGuess.forEach((letter, index) => {
+            const targetSquare = document.querySelector(`.square-${round}-${index + 1}`);
+            if (chosenWord[index] === letter) {
+                // Correct letter in the correct position
+                targetSquare.classList.add('correct-position');
+            } else if (chosenWord.includes(letter)) {
+                // Correct letter but in the wrong position
+                targetSquare.classList.add('correct-letter');
+            }
+        });
+
         if (guessWord === chosenWord) {
             celebrateWin();
             return;
         }
 
-        // Move to the next round or end the game
         if (round === 7) {
             alert('Game over! The word was: ' + chosenWord);
             resetGame();
@@ -48,10 +59,11 @@ document.addEventListener('DOMContentLoaded', () => {
             round++;
             alert('Try again! Round: ' + round);
         }
+
         currentGuess = []; // Prepare for the next guess
         resetLetters(); // Make all letters available again for the new round
     };
-    
+
     const celebrateWin = () => {
         alert('Congratulations! You guessed the word!');
         resetGame();
@@ -60,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const resetGame = () => {
         document.querySelectorAll('.square').forEach(square => {
             square.textContent = '';
-            square.classList.remove('filled', 'glow-intense');
+            square.classList.remove('filled', 'glow-intense', 'correct-position', 'correct-letter');
         });
         resetLetters();
         history = [];
@@ -72,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     letters.forEach(letter => {
         letter.addEventListener('click', function() {
-            if (!usedLettersInRound.has(this.textContent.toLowerCase())) { // Check if the letter hasn't been used in this round
+            if (!usedLettersInRound.has(this.textContent.toLowerCase()) && currentGuess.length < 5) { // Check if the letter hasn't been used in this round
                 const targetRow = Math.ceil(nextSquare / 5);
                 const targetCol = nextSquare % 5 === 0 ? 5 : nextSquare % 5;
                 const targetSquare = document.querySelector(`.square-${targetRow}-${targetCol}`);
@@ -85,9 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     usedLettersInRound.add(this.textContent.toLowerCase()); // Mark the letter as used in this round
                     currentGuess.push(this.textContent.toLowerCase());
 
-                    // Check the guess after filling the last square of the row
-                    if (targetCol === 5) {
-                        checkGuess();
+                    if (currentGuess.length === 5) {
+                        checkGuess(); // Only check the guess when the row is complete
                     }
 
                     nextSquare++;
@@ -100,9 +111,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const lastMove = history.pop();
         if (lastMove) {
             lastMove.square.textContent = '';
-            lastMove.square.classList.remove('filled', 'glow-intense');
-            lastMove.letter.style.visibility = 'visible';
-            currentGuess.pop();
+            lastMove.square.classList.remove('filled', 'glow-intense', 'correct-position', 'correct-letter');
+            lastMove.letter.style.visibility = 'visible'; // Make the letter visible again for the current round
+            usedLettersInRound.delete(lastMove.letter.textContent.toLowerCase()); // Remove the letter from the used set
+            currentGuess.pop(); // Remove the last letter from the current guess
             nextSquare--;
         }
     });
