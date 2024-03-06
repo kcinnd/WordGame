@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let usedLettersInRound = new Set();
 
     instructionsBtn.onclick = function() {
-        instructionsModal.style.display = 'block'; // Show the modal
+        instructionsModal.style.display = 'block'; 
     };
 
     closeBtn.onclick = function() {
