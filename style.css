@@ -197,10 +197,10 @@ button:hover {
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
-    color: #08f; /* Neon blue text */
+    color: #1f51ff; /* Neon blue text */
     font-size: 16px;
     cursor: pointer;
-    box-shadow: 0 0 15px #08f; /* Neon glow */
+    box-shadow: 0 0 15px #1f51ff; /* Neon glow */
     transition: transform 0.2s ease-in-out;
 }
 
