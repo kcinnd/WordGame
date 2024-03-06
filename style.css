@@ -3,7 +3,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #111; /* Dark background for the cyberpunk theme */
+    background: #111; 
     color: #fff;
     font-family: 'Arial', sans-serif;
 }
