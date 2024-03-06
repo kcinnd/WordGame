@@ -160,24 +160,6 @@ button:hover {
     text-decoration: none;
 }
 
-#readInstructionsBtn {
-    background-color: #0f0c29; /* Deep purple background */
-    background-image: linear-gradient(315deg, #0f0c29 0%, #302b63 74%, #24243e); /* Gradient effect */
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    color: #08f; /* Neon blue text */
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: 0 0 15px #08f; /* Neon glow */
-    transition: transform 0.2s ease-in-out;
-}
-
-#readInstructionsBtn:hover {
-    transform: scale(1.1); /* Slightly enlarge on hover */
-    box-shadow: 0 0 25px #08f; /* Intensify glow on hover */
-}
-
 .game-area {
     display: grid;
     grid-template-columns: auto auto; /* Two columns: for game-container and controls-container */
@@ -208,40 +190,56 @@ button:hover {
     color: #035ba8;
 }
 
-/* Glow effect for the Undo button */
-#undoButton {
-    background-color: #292900; /* Base color for gradient */
-    background-image: linear-gradient(315deg, #292900 0%, #b0b000 74%, #ffff00); /* Yellow gradient effect */
+#readInstructionsBtn {
+    background-color: #0f0c29; /* Deep purple background */
+    background-image: linear-gradient(315deg, #0f0c29 0%, #302b63 74%, #24243e); /* Gradient effect */
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
-    color: #ffff00; 
+    color: #08f; /* Neon blue text */
     font-size: 16px;
     cursor: pointer;
-    box-shadow: 0 0 15px rgba(255, 255, 0, 0.7); /* Soft yellow glow */
+    box-shadow: 0 0 15px #08f; /* Neon glow */
+    transition: transform 0.2s ease-in-out;
+}
+
+#readInstructionsBtn:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    box-shadow: 0 0 25px #08f; /* Intensify glow on hover */
+}
+
+/* Glow effect for the Undo button */
+#undoButton {
+    background-color: #000000; /* Base color for gradient */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: #ffff33; 
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255, 255, 51, 0.7); /* Soft yellow glow */
     transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 #undoButton:hover {
     transform: scale(1.1); /* Slightly enlarge on hover */
-    box-shadow: 0 0 25px rgba(255, 255, 0, 0.8); /* Intensify yellow glow on hover */
+    box-shadow: 0 0 25px rgba(255, 255, 51, 0.8); /* Intensify yellow glow on hover */
 }
 
 /* Glow effect for the Clear button */
 #clearButton {
-    background-color: #290000; /* Base color for gradient */
-    background-image: linear-gradient(315deg, #290000 0%, #b00000 74%, #ff0000); /* Red gradient effect */
+    background-color: #000000;
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
-    color: #ff0000; /* White text */
+    color: #ff3131; /* White text */
     font-size: 16px;
     cursor: pointer;
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.7); /* Soft red glow */
+    box-shadow: 0 0 15px rgba(255, 49, 49, 0.7); /* Soft red glow */
     transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 #clearButton:hover {
     transform: scale(1.1); /* Slightly enlarge on hover */
-    box-shadow: 0 0 25px rgba(255, 0, 0, 0.8); /* Intensify red glow on hover */
+    box-shadow: 0 0 25px rgba(255, 49, 49, 0.8); /* Intensify red glow on hover */
 }
