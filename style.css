@@ -1,11 +1,16 @@
+@font-face {
+    font-family: 'Conthrax';
+    src: url('/fonts/conthrax-sb.otf') format('opentype');
+}
+
 body {
     display: flex;
+    font-family: 'Conthrax', Arial, sans-serif;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background: #111; 
     color: #fff;
-    font-family: 'Arial', sans-serif;
 }
 
 .game-container {
