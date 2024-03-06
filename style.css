@@ -55,7 +55,7 @@ body {
 
 /* Style the alphabet container and letters for a more engaging look */
 .alphabet-container {
-    margin-top: 20px; /* Space from the game board */
+    margin-top: 200px; /* Space from the game board */
     padding: 20px;
     grid-column: 2 / 3; /* Place the alphabet container in the second column */
     grid-row: 1 / 2;
