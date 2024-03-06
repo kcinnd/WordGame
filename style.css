@@ -176,5 +176,6 @@ button:hover {
 
 .controls-container {
     display: flex;
+    gap: 20px;
     flex-direction: column; /* Stack alphabet and buttons containers vertically */
 }
