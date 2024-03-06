@@ -270,7 +270,7 @@ button:hover {
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border-radius: 10px; /* Rounded corners */
-    width: 70%; /* Width */
+    width: 40%; /* Width */
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Shadow for depth */
     border: 1px solid rgba(255, 255, 255, 0.18); /* Slight border */
     animation: modalFadeIn 0.5s; /* Fade-in animation */
