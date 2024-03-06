@@ -203,5 +203,30 @@ button:hover {
 }
 
 .square.incorrect-letter {
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0); /* Removes the inner glow */
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.7), /* Soft pink glow */
+                 0 0 20px rgba(255, 105, 180, 0.7); /* Intense pink glow */
+}
+
+/* Glow effect for the Undo button */
+#undoButton {
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.7), /* Soft yellow glow */
+                 0 0 20px rgba(255, 255, 0, 0.7); /* Intense yellow glow */
+    transition: box-shadow 0.3s ease-in-out; /* Smooth transition for the glow effect */
+}
+
+#undoButton:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 0, 0.8), /* More intense yellow glow on hover */
+                 0 0 25px rgba(255, 255, 0, 0.8); /* More intense yellow glow on hover */
+}
+
+/* Glow effect for the Clear button */
+#clearButton {
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7), /* Soft red glow */
+                 0 0 20px rgba(255, 0, 0, 0.7); /* Intense red glow */
+    transition: box-shadow 0.3s ease-in-out; /* Smooth transition for the glow effect */
+}
+
+#clearButton:hover {
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.8), /* More intense red glow on hover */
+                 0 0 25px rgba(255, 0, 0, 0.8); /* More intense red glow on hover */
 }
