@@ -8,14 +8,6 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
-.game-area {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Align items at the top */
-    gap: 20px; /* Space between game container and alphabet container */
-    margin-bottom: 20px; /* Space above the buttons */
-}
-
 .game-container {
     display: grid;
     margin: 0 auto 50px; 
@@ -174,11 +166,12 @@ button:hover {
     box-shadow: 0 0 25px #08f; /* Intensify glow on hover */
 }
 
-.game-wrapper {
+.game-area {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Keep items aligned at the top */
-    gap: 20px; /* Space between game container and controls container */
+    align-items: flex-start; /* Align items at the top */
+    gap: 20px; /* Space between game container and alphabet container */
+    margin-bottom: 20px; /* Space above the buttons */
 }
 
 .controls-container {
