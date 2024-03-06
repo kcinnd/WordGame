@@ -1,12 +1,10 @@
-const words = ['globe', 'human', 'earth', 'world', 'urban', 'plant', 'flora', 'fauna', 'ocean']; // List of words
-let chosenWord = words[Math.floor(Math.random() * words.length)]; // Randomly chosen word
-let currentGuess = []; // Stores the current guess
-let round = 1; // Current round
-
 document.addEventListener('DOMContentLoaded', () => {
     const letters = document.querySelectorAll('.letter');
     let nextSquare = 1;
     let history = []; // Track placed letters and their squares
+    let currentGuess = []; // Reset currentGuess for each row
+    let round = 1; // Track the current round
+    const squaresPerRow = 5; // Squares per row
 
     const resetLetters = () => {
         letters.forEach(letter => letter.style.visibility = 'visible');
@@ -17,22 +15,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (guessWord === chosenWord) {
             celebrateWin();
             return;
-        }
-
-        if (currentGuess.length === 5) { // Guess is complete
-            if (round === 7) {
-                alert('Game over! The word was: ' + chosenWord);
-                resetGame();
-            } else {
-                round++;
-                currentGuess = []; // Reset current guess for the next round
-                alert('Try again! Round: ' + round);
-            }
+        } else if (round < 7) {
+            alert('Try again! Round: ' + round);
+        } else {
+            alert('Game over! The word was: ' + chosenWord);
+            resetGame();
         }
     };
 
     const celebrateWin = () => {
-        // Implement celebration animations and effects here
+        // Celebration animations and effects
         alert('Congratulations! You guessed the word!');
         resetGame();
     };
@@ -46,26 +38,28 @@ document.addEventListener('DOMContentLoaded', () => {
         history = [];
         nextSquare = 1;
         round = 1;
-        chosenWord = words[Math.floor(Math.random() * words.length)]; // Choose a new word
+        currentGuess = [];
+        chosenWord = words[Math.floor(Math.random() * words.length)];
     };
 
-    // Letter click event
+    // Letter click event to accumulate guesses and check after each row
     letters.forEach(letter => {
         letter.addEventListener('click', function() {
-            const row = Math.ceil(nextSquare / 5);
-            const col = nextSquare % 5 === 0 ? 5 : nextSquare % 5;
-            const targetSquare = document.querySelector(`.square-${row}-${col}`);
+            if (nextSquare <= squaresPerRow * round) {
+                const targetSquare = document.querySelector(`.square-${round}-${nextSquare - squaresPerRow * (round - 1)}`);
+                if (targetSquare && !targetSquare.textContent.trim()) {
+                    targetSquare.textContent = this.textContent;
+                    targetSquare.classList.add('filled', 'glow-intense');
+                    history.push({ square: targetSquare, letter: this });
+                    this.style.visibility = 'hidden';
+                    currentGuess.push(this.textContent.toLowerCase());
+                    nextSquare++;
 
-            if (!targetSquare.classList.contains('filled') && currentGuess.length < 5) {
-                targetSquare.textContent = this.textContent;
-                targetSquare.classList.add('filled', 'glow-intense');
-                history.push({ square: targetSquare, letter: this });
-                this.style.visibility = 'hidden';
-                currentGuess.push(this.textContent.toLowerCase());
-
-                nextSquare++;
-                if (nextSquare % 5 === 1 || nextSquare > 35) {
-                    checkGuess();
+                    if (currentGuess.length === squaresPerRow) {
+                        checkGuess();
+                        round++;
+                        currentGuess = []; // Reset guess for the next row
+                    }
                 }
             }
         });
@@ -78,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
             lastMove.square.textContent = '';
             lastMove.square.classList.remove('filled', 'glow-intense');
             lastMove.letter.style.visibility = 'visible';
-            currentGuess.pop();
+            currentGuess.pop(); // Remove the last letter from the current guess
             nextSquare--;
         }
     });
