@@ -196,3 +196,7 @@ button:hover {
 .square.correct-letter {
     box-shadow: 0 0 15px #00f, 0 0 30px #00f; /* Neon blue glow for correct letter, wrong position */
 }
+
+.square.incorrect-letter {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0); /* Removes the inner glow */
+}
