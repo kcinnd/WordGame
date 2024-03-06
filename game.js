@@ -1,4 +1,4 @@
-const words = ['globe', 'human', 'earth', 'world', 'urban', 'plant', 'flora', 'fauna', 'ocean']; // Example list of words
+const words = ['globe', 'human', 'earth', 'world', 'urban', 'plant', 'flora', 'fauna', 'ocean']; // List of words
 let chosenWord = words[Math.floor(Math.random() * words.length)]; // Randomly chosen word
 let currentGuess = []; // Stores the current guess
 let round = 1; // Current round
@@ -7,22 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const letters = document.querySelectorAll('.letter');
     let nextSquare = 1;
     let history = []; // Track placed letters and their squares
-    let lockedRows = new Set(); // Track locked rows
-    const totalSquares = 35; // 7 rows * 5 columns
-    const squaresPerRow = 5;
 
-    // Modal functionality
-    const modal = document.getElementById('instructionsModal');
-    const closeButton = document.querySelector('.close');
-    
-    closeButton.onclick = function() {
-        modal.style.display = 'none';
-    };
-    
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = 'none';
-        }
+    const resetLetters = () => {
+        letters.forEach(letter => letter.style.visibility = 'visible');
     };
 
     const checkGuess = () => {
@@ -55,39 +42,31 @@ document.addEventListener('DOMContentLoaded', () => {
             square.textContent = '';
             square.classList.remove('filled', 'glow-intense');
         });
-        currentGuess = [];
+        resetLetters();
+        history = [];
         nextSquare = 1;
         round = 1;
         chosenWord = words[Math.floor(Math.random() * words.length)]; // Choose a new word
-        resetLetters();
     };
 
-    // Update letter click event to push letters to currentGuess and call checkGuess()
-    letters.forEach(letter => {
-        letter.addEventListener('click', function() {
-            if (currentGuess.length < 5) {
-                currentGuess.push(this.textContent.toLowerCase());
-                checkGuess();
-            }
-        });
-    });
-
-    const resetLetters = () => {
-        letters.forEach(letter => letter.style.visibility = 'visible');
-    };
-
+    // Letter click event
     letters.forEach(letter => {
         letter.addEventListener('click', function() {
             const row = Math.ceil(nextSquare / 5);
             const col = nextSquare % 5 === 0 ? 5 : nextSquare % 5;
             const targetSquare = document.querySelector(`.square-${row}-${col}`);
 
-            if (targetSquare && !targetSquare.textContent.trim()) {
+            if (!targetSquare.classList.contains('filled') && currentGuess.length < 5) {
                 targetSquare.textContent = this.textContent;
-                targetSquare.classList.add('filled', 'glow-intense'); // Add intense glow
+                targetSquare.classList.add('filled', 'glow-intense');
                 history.push({ square: targetSquare, letter: this });
                 this.style.visibility = 'hidden';
+                currentGuess.push(this.textContent.toLowerCase());
+
                 nextSquare++;
+                if (nextSquare % 5 === 1 || nextSquare > 35) {
+                    checkGuess();
+                }
             }
         });
     });
@@ -97,20 +76,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const lastMove = history.pop();
         if (lastMove) {
             lastMove.square.textContent = '';
-            lastMove.square.classList.remove('filled', 'glow-intense'); // Remove intense glow
+            lastMove.square.classList.remove('filled', 'glow-intense');
             lastMove.letter.style.visibility = 'visible';
+            currentGuess.pop();
             nextSquare--;
         }
     });
 
     // Clear functionality
-    document.getElementById('clearButton').addEventListener('click', () => {
-        document.querySelectorAll('.square').forEach(square => {
-            square.textContent = '';
-            square.classList.remove('filled', 'glow-intense'); // Remove intense glow
-        });
-        resetLetters();
-        history = [];
-        nextSquare = 1;
-    });
+    document.getElementById('clearButton').addEventListener('click', resetGame);
 });
