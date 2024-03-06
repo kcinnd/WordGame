@@ -94,6 +94,7 @@ body {
     justify-content: center; /* Center the buttons horizontally */
     gap: 10px;
     margin-top: 20px;
+    margin-bottom: 150px;
     grid-column: 2 / 3; /* Place the buttons container in the second column */
     grid-row: 2 / 3;
 }
