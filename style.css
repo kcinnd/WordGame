@@ -173,3 +173,15 @@ button:hover {
     transform: scale(1.1); /* Slightly enlarge on hover */
     box-shadow: 0 0 25px #08f; /* Intensify glow on hover */
 }
+
+.game-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Keep items aligned at the top */
+    gap: 20px; /* Space between game container and controls container */
+}
+
+.controls-container {
+    display: flex;
+    flex-direction: column; /* Stack alphabet and buttons containers vertically */
+}
