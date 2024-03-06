@@ -92,12 +92,19 @@ body {
 .buttons-container {
     text-align: center;
     display: flex;
+    flex-direction: column; /* Stack the button containers vertically */
+    align-items: center;
     justify-content: center; /* Center the buttons horizontally */
     gap: 10px;
     margin-top: 20px;
     margin-bottom: 150px;
     grid-column: 2 / 3; /* Place the buttons container in the second column */
     grid-row: 2 / 3;
+}
+
+.top-button,
+.bottom-buttons {
+    margin-bottom: 10px; /* Add some space between the button groups */
 }
 
 button {
@@ -111,7 +118,7 @@ button {
     cursor: pointer;
     outline: none;
     margin-bottom: 150px;
-    margin: 0 10px;
+    margin: 5px;
     text-transform: uppercase;
     box-shadow: 0 0 15px #0ff; /* Outer glow */
     transition: all 0.3s ease;
