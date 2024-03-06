@@ -267,6 +267,8 @@ button:hover {
     width: 100%;
     height: 100%;
     overflow: auto;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
     background-color: rgba(0, 0, 0, 0.4);
 }
 
@@ -277,7 +279,10 @@ button:hover {
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border-radius: 10px; /* Rounded corners */
-    width: 40%; /* Width */
+    max-width: 90%; /* Width */
+    width: auto;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Shadow for depth */
     border: 1px solid rgba(255, 255, 255, 0.18); /* Slight border */
     animation: modalFadeIn 0.5s; /* Fade-in animation */
@@ -297,7 +302,9 @@ button:hover {
 
 .congrats-close-btn {
     color: #ccc;
-    float: right;
+    position: absolute; /* Position the close button absolutely within the modal */
+    top: 10px; /* Position at the top */
+    right: 15px;
     font-size: 28px;
     font-weight: bold;
 }
