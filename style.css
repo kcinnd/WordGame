@@ -8,6 +8,14 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
+.game-area {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items at the top */
+    gap: 20px; /* Space between game container and alphabet container */
+    margin-bottom: 20px; /* Space above the buttons */
+}
+
 .game-container {
     display: grid;
     margin: 0 auto 50px; 
@@ -81,6 +89,9 @@ body {
 
 .buttons-container {
     text-align: center;
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    gap: 10px;
     margin-top: 20px;
 }
 
