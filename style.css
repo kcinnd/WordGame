@@ -123,29 +123,6 @@ body {
     margin-bottom: 10px; /* Add some space between the button groups */
 }
 
-button {
-    background-color: #222;
-    border: 2px solid #0ff;
-    font-family: 'Conthrax', Arial, sans-serif;
-    border-radius: 5px;
-    color: #0ff;
-    font-size: 18px;
-    padding: 10px 20px;
-    cursor: pointer;
-    outline: none;
-    margin-bottom: 150px;
-    margin: 5px;
-    text-transform: uppercase;
-    box-shadow: 0 0 15px #0ff; /* Outer glow */
-    transition: all 0.3s ease;
-}
-
-button:hover {
-    background-color: #0ff;
-    color: #000;
-    box-shadow: 0 0 20px #0ff, 0 0 30px #0ff, 0 0 50px #0ff; /* Intensified glow */
-}
-
 .modal {
     display: none;
     position: fixed;
@@ -333,20 +310,51 @@ button:hover {
     cursor: pointer;
 }
 
+button {
+    background-color: #222;
+    border: 2px solid #0ff;
+    font-family: 'Conthrax', Arial, sans-serif;
+    border-radius: 5px;
+    color: #0ff;
+    font-size: 18px;
+    padding: 10px 20px;
+    cursor: pointer;
+    outline: none;
+    margin-bottom: 150px;
+    margin: 5px;
+    text-transform: uppercase;
+    box-shadow: 0 0 15px #0ff; /* Outer glow */
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #0ff;
+    color: #000;
+    box-shadow: 0 0 20px #0ff, 0 0 30px #0ff, 0 0 50px #0ff; /* Intensified glow */
+}
+
 /* Optional: Specific styles for the final challenge button */
 #continueFinalBtn {
-    background-color: #4CAF50; /* Green background */
-    color: white;
-    padding: 10px 20px;
-    margin-top: 10px; /* Spacing between the two buttons */
-    border: none;
+    background-color: #222;
+    border: 2px solid #0ff;
+    font-family: 'Conthrax', Arial, sans-serif;
     border-radius: 5px;
+    color: #0ff;
+    font-size: 18px;
+    padding: 10px 20px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    outline: none;
+    margin-bottom: 150px;
+    margin: 5px;
+    text-transform: uppercase;
+    box-shadow: 0 0 15px #0ff; /* Outer glow */
+    transition: all 0.3s ease;
 }
 
 #continueFinalBtn:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #0ff;
+    color: #000;
+    box-shadow: 0 0 20px #0ff, 0 0 30px #0ff, 0 0 50px #0ff;
 }
 
 .final-congrats-modal {
