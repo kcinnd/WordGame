@@ -96,10 +96,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    document.getElementById('continueBtn').addEventListener('click', function() {
-        window.location.href = 'sixgame.html'; // Relative path, assuming it's in the same directory
-    });
-
     const resetGame = () => {
         document.querySelectorAll('.square').forEach(square => {
             square.textContent = '';
